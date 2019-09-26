@@ -1,6 +1,9 @@
-# app-ext
+# Deepmark-it
 
-Highlight and bookmark from webpages
+Highlight and bookmark in webpages
+Web Annotation based deep link bookmarks
+
+---
 
 ## Install
 
@@ -27,3 +30,4 @@ The build tool also defines a variable named `process.env.NODE_ENV` in your scri
 ## Docs
 
 * [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox)
+

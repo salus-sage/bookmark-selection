@@ -1,7 +1,9 @@
 {
-  "name": "app-ext",
+  "name": "deepmark-it",
   "version": "0.0.1",
   "description": "Highlight and bookmark from webpages",
+  "url": "https://github.com/salus-sage/deepmark-it",
+  "author": "salus-sage",
   "scripts": {
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build"
