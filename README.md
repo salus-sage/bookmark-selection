@@ -1,7 +1,9 @@
 # Deepmark-it
 
 Highlight and bookmark in webpages
-Web Annotation based deep link bookmarks
+
+Web Annotation based deep link bookmarks.
+More details [Annotation Bookmarks Spec](https://hackmd.io/@sagesalus/ryJNosDvr)
 
 ## Demo
 - Download this repo and unzip
