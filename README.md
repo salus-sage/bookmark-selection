@@ -7,7 +7,7 @@ Web Annotation based deep link bookmarks
 - Download this repo and unzip
 - Open `chrome://extensions/`
 - Click on Load Unpacked
-- Choose the `dist/` from this directory
+- Choose the `dist/chrome/` from the unpacked app directory
 - Visit any webpage, Highlight text and right click
 - Click on Bookmark Selection 
 - Bookmark will be saved to `Other bookmarks/` folder
