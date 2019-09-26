@@ -3,7 +3,16 @@
 Highlight and bookmark in webpages
 Web Annotation based deep link bookmarks
 
----
+## Demo
+- Download this repo and unzip
+- Open `chrome://extensions/`
+- Click on Load Unpacked
+- Choose the `dist/` from this directory
+- Visit any webpage, Highlight text and right click
+- Click on Bookmark Selection 
+- Bookmark will be saved to `Other bookmarks/` folder
+
+===
 
 ## Install
 
