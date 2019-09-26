@@ -12,20 +12,21 @@ Web Annotation based deep link bookmarks
 - Click on Bookmark Selection 
 - Bookmark will be saved to `Other bookmarks/` folder
 
-===
+------
 
-## Install
+## Contribute
+### Install
 
 	$ npm install
 
-## Development
+### Development
 
     npm run dev chrome
     npm run dev firefox
     npm run dev opera
     npm run dev edge
 
-## Build
+### Build
 
     npm run build chrome
     npm run build firefox
