@@ -19,8 +19,10 @@ var onCreated = function(e){
 
 //Create Bookmark
 var createBookmark = function(info, tab){
+	var newTitle = tab.title+" - "+info.selectionText
+
 	var createBookmark = browser.bookmarks.create({
-	  title: tab.title,
+	  title: newTitle,
 	  url: tab.url
 	});
 	return createBookmark;
@@ -36,9 +38,9 @@ browser.contextMenus.onClicked.addListener(function(info, tab) {
 	console.log(info, tab, browser);
   switch (info.menuItemId) {
     case "log-selection":
-      console.log(info.selectionText);
+      //console.log(info.selectionText);
       var created = createBookmark(info, tab);
-      console.log(created, "Bookmark Created")
+      //console.log(created, "Bookmark Created")
       break;
     
   }
