@@ -9,7 +9,7 @@ More details [Annotation Bookmarks Spec](https://hackmd.io/@sagesalus/ryJNosDvr)
 - Download this repo and unzip
 - Open `chrome://extensions/`
 - Click on Load Unpacked
-- Choose the `dist/chrome/` from the unpacked app directory
+- Choose the `dist/chrome/` from the unzipped directory
 - Visit any webpage, Highlight text and right click
 - Click on Bookmark Selection 
 - Bookmark will be saved to `Other bookmarks/` folder
