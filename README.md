@@ -1,22 +1,24 @@
-# Deepmark-it
+# Bookmark selection
 
-Highlight and bookmark in webpages
+Browser extension to bookmark any selected text in a web page.
 
-Web Annotation based deep link bookmarks.
-More details [Annotation Bookmarks Spec](https://hackmd.io/@sagesalus/ryJNosDvr)
+## Demo (Chromium-based browsers)
 
-## Demo
 - Download this repo and unzip
 - Open `chrome://extensions/`
+- Enable developer mode
 - Click on Load Unpacked
 - Choose the `dist/chrome/` from the unzipped directory
-- Visit any webpage, Highlight text and right click
-- Click on Bookmark Selection 
+- Visit any web page, highlight text and right click
+- Click on Bookmark Selection
 - Bookmark will be saved to `Other bookmarks/` folder
 
 ------
 
 ## Contribute
+
+This project uses [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox) for building/bundling the source code. It provides the following commands:
+
 ### Install
 
 	$ npm install
@@ -34,12 +36,3 @@ More details [Annotation Bookmarks Spec](https://hackmd.io/@sagesalus/ryJNosDvr)
     npm run build firefox
     npm run build opera
     npm run build edge
-
-## Environment
-
-The build tool also defines a variable named `process.env.NODE_ENV` in your scripts. 
-
-## Docs
-
-* [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox)
-

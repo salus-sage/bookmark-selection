@@ -1,9 +1,12 @@
 {
-  "name": "deepmark-it",
+  "name": "bookmark-selection",
   "version": "0.0.1",
-  "description": "Highlight and bookmark from webpages",
-  "url": "https://github.com/salus-sage/deepmark-it",
-  "author": "salus-sage",
+  "description": "Browser extension to bookmark any selected text",
+  "url": "https://github.com/salus-sage/bookmark-selection",
+  "contributors": [
+    "salus-sage",
+    "Gerben"
+  ],
   "scripts": {
     "dev": "webextension-toolbox dev",
     "build": "webextension-toolbox build"
