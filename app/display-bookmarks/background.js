@@ -1,4 +1,5 @@
-import { makeRemotelyCallable } from 'webextension-rpc';
+import whenAllSettled from 'when-all-settled';
+import { makeRemotelyCallable, remoteFunction } from 'webextension-rpc';
 
 function normaliseUrl(url) {
   // Remove the fragment identifier, if any.
@@ -35,3 +36,18 @@ async function retrieveBookmarks({ url }) {
 makeRemotelyCallable({
   retrieveBookmarks,
 });
+
+async function onBookmarkChange() {
+  // Update the bookmarks in every tab.
+  const tabs = await browser.tabs.query({ status: 'complete' });
+  const refreshingPromises = tabs.map(tab =>
+    remoteFunction('displayBookmarksInPage', { tabId: tab.id })()
+  );
+  // Wait until all tabs completed, ignoring any errors.
+  await whenAllSettled(refreshingPromises);
+}
+
+browser.bookmarks.onCreated.addListener(onBookmarkChange);
+browser.bookmarks.onRemoved.addListener(onBookmarkChange);
+browser.bookmarks.onChanged.addListener(onBookmarkChange);
+browser.bookmarks.onImportEnded.addListener(onBookmarkChange);
