@@ -13,5 +13,9 @@
   },
   "devDependencies": {
     "webextension-toolbox": "latest"
+  },
+  "dependencies": {
+    "@annotator/fragment-identifier": "0.1.0-dev.9d100c0f",
+    "webextension-rpc": "^0.1.0"
   }
 }

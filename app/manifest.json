@@ -14,7 +14,7 @@
       "run_at": "document_end"
   }],
   "permissions": [
-    "<all_urls>",
+    "activeTab",
     "bookmarks",
     "contextMenus",
     "tabs"
