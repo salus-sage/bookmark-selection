@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "@annotator/fragment-identifier": "0.1.0-dev.9d100c0f",
+    "dom-highlight-range": "^2.0.0",
     "webextension-rpc": "^0.1.0"
   }
 }
