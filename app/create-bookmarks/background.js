@@ -55,8 +55,10 @@ async function getBookmarkFolderId() {
 	}
 
 	if (bookmarkFolderId === undefined) {
+		const bookmarkFolderName = browser.i18n.getMessage('bookmarkFolderName');
+
 		// First, try find an existing folder with matching title (perhaps from our previous life).
-		const foundFolders = await browser.bookmarks.search({ title: 'Quotes' });
+		const foundFolders = await browser.bookmarks.search({ title: bookmarkFolderName });
 		if (foundFolders.length > 0) {
 			// Found (at least) one. We use it.
 			bookmarkFolderId = foundFolders[0].id;
@@ -68,7 +70,7 @@ async function getBookmarkFolderId() {
 			const mainBookmarksFolderId = bookmarkTree[0].children[0].id;
 			const bookmarkFolder = await browser.bookmarks.create({
 				parentId: mainBookmarksFolderId,
-				title: 'Quotes',
+				title: bookmarkFolderName,
 			});
 			bookmarkFolderId = bookmarkFolder.id;
 		}
@@ -92,7 +94,7 @@ async function init() {
 	// Create context menu item
 	browser.contextMenus.create({
 		id: 'bookmark-selection',
-		title: 'Bookmark selected text',
+		title: browser.i18n.getMessage('bookmarkSelectionContextMenuItem'),
 		contexts: ['selection'],
 	});
 

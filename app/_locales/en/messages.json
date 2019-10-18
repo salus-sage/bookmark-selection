@@ -10,5 +10,13 @@
   "appDescription": {
     "message": "Browser extension to bookmark any selected text",
     "description": "The description of the application"
+  },
+  "bookmarkFolderName": {
+    "message": "Quotes",
+    "description": "The name of the bookmark folder this extension will create and use."
+  },
+  "bookmarkSelectionContextMenuItem": {
+    "message": "Bookmark selected text",
+    "description": "The entry in the context ('right-click') menu of a selection"
   }
 }
