@@ -50,4 +50,6 @@ async function onBookmarkChange() {
 browser.bookmarks.onCreated.addListener(onBookmarkChange);
 browser.bookmarks.onRemoved.addListener(onBookmarkChange);
 browser.bookmarks.onChanged.addListener(onBookmarkChange);
-browser.bookmarks.onImportEnded.addListener(onBookmarkChange);
+if (browser.bookmarks.onImportEnded) {
+	browser.bookmarks.onImportEnded.addListener(onBookmarkChange);
+}
