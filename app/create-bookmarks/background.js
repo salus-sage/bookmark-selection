@@ -31,10 +31,53 @@ async function createBookmark(tab, selectedText) {
 	const bookmarkUrl = createPreciseUrl(tab.url, selector);
 	const bookmarkTitle = `“${selectedText}”`;
 
+	const bookmarkFolderId = await getBookmarkFolderId();
+
 	await browser.bookmarks.create({
 		title: bookmarkTitle,
 		url: bookmarkUrl,
+		parentId: bookmarkFolderId,
 	});
+}
+
+// Get the id of the folder for our bookmarks. Create the folder if needed.
+async function getBookmarkFolderId() {
+	// Read the supposed folder id from our settings.
+	let { bookmarkFolderId } = await browser.storage.local.get('bookmarkFolderId');
+
+	// Check if the folder exists and is indeed a folder.
+	try {
+		const bookmarkFolder = await browser.bookmarks.get(bookmarkFolderId);
+		if (bookmarkFolder.url) throw new Error;
+	} catch (err) {
+		// Ignore the existing, faulty setting. We will update the stored value further below.
+		bookmarkFolderId = undefined;
+	}
+
+	if (bookmarkFolderId === undefined) {
+		// First, try find an existing folder with matching title (perhaps from our previous life).
+		const foundFolders = await browser.bookmarks.search({ title: 'Quotes' });
+		if (foundFolders.length > 0) {
+			// Found (at least) one. We use it.
+			bookmarkFolderId = foundFolders[0].id;
+		}
+		else {
+			// Create a new folder.
+			const bookmarkTree = await browser.bookmarks.getTree();
+			// Simply take the root’s first child: probably the main bookmarks menu or bookmarks toolbar.
+			const mainBookmarksFolderId = bookmarkTree[0].children[0].id;
+			const bookmarkFolder = await browser.bookmarks.create({
+				parentId: mainBookmarksFolderId,
+				title: 'Quotes',
+			});
+			bookmarkFolderId = bookmarkFolder.id;
+		}
+
+		// Update our settings to remember the folder.
+		await browser.storage.local.set({ bookmarkFolderId });
+	}
+
+	return bookmarkFolderId;
 }
 
 function onContextMenuClick(info, tab) {
