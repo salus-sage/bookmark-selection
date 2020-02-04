@@ -2,6 +2,9 @@
   "manifest_version": 2,
   "default_locale": "en",
   "icons": {
+    "48": "/img/icon.svg",
+    "96": "/img/icon.svg",
+    "128": "/img/icon.svg"
   },
   "background": {
     "scripts": [
