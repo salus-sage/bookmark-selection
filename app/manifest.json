@@ -22,5 +22,8 @@
     "contextMenus",
     "storage",
     "tabs"
-  ]
+  ],
+  "__firefox__applications": {
+    "gecko": {"id": "bookmark-selection@_"}
+  }
 }
