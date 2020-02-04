@@ -2,37 +2,39 @@
 
 Browser extension to bookmark any selected text in a web page.
 
-## Demo (Chromium-based browsers)
+## Status
 
-- Download this repo and unzip
-- Open `chrome://extensions/`
-- Enable developer mode
-- Click on Load Unpacked
-- Choose the `dist/chrome/` from the unzipped directory
-- Visit any web page, highlight text and right click
-- Click on Bookmark Selection
-- Bookmark will be saved to `Other bookmarks/` folder
+Proof of concept. Tested in recent Firefox and Chromium. Functional but buggy:
+It may fail to highlight the bookmarked text in some cases, but it is unlikely
+to cause harm.
 
-------
+This project uses a [proposed syntax](https://www.w3.org/TR/selectors-states/#frags)
+for encoding an arbitrary selection in the fragment identifier of a URL. It also
+doubles as a simple test scenario for [Apache Annotator](https://annotator.apache.org/)
+modules.
 
-## Contribute
+## Usage
 
-This project uses [webextension-toolbox](https://github.com/HaNdTriX/webextension-toolbox) for building/bundling the source code. It provides the following commands:
+In a browser with this extension installed:
 
-### Install
+- Open any web page
+- Select some text in the page, then right-click to open the context menu
+- There should now be the option *Bookmark selected text*; click it
+- A folder called *Quotes* should appear among your bookmarks, containing a
+  bookmark the selected quote
+- The bookmarked quote will be highlighted, also when reopening the page (if the
+  quote will still be present in the renewed page)
 
-	$ npm install
+## Install from source
 
-### Development
+To run it Chromium-based browsers:
 
-    npm run dev chrome
-    npm run dev firefox
-    npm run dev opera
-    npm run dev edge
+- Clone/download this repo
+- In the repo’s directory, run `npm install`, then `npm run build chrome`
+- In the browser, visit `about:extensions`
+- Enable developer mode, click on *Load unpacked*
+- Choose the `dist/chrome/` from this directory
 
-### Build
-
-    npm run build chrome
-    npm run build firefox
-    npm run build opera
-    npm run build edge
+This project uses [webextension-toolbox](https://github.com/webextension-toolbox/webextension-toolbox)
+for building/bundling the source code. Look there for more details about
+building the extension.
