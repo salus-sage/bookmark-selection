@@ -17,7 +17,7 @@
   "dependencies": {
     "@annotator/dom": "0.1.0-rc.3",
     "@annotator/fragment-identifier": "0.1.0-rc.3",
-    "dom-highlight-range": "^2.0.0",
+    "dom-highlight-range": "^3.0.0",
     "webextension-rpc": "^0.1.0",
     "when-all-settled": "^0.1.1"
   }
