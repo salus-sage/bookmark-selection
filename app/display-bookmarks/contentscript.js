@@ -1,5 +1,5 @@
 import { createTextQuoteSelector } from '@annotator/dom';
-import { parse } from '@annotator/fragment-identifier';
+import { parse } from 'selector-state-frags';
 import highlightRange from 'dom-highlight-range';
 import { makeRemotelyCallable, remoteFunction } from 'webextension-rpc';
 

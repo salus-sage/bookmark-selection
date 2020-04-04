@@ -1,4 +1,4 @@
-import { stringify } from '@annotator/fragment-identifier';
+import { stringify } from 'selector-state-frags';
 import { remoteFunction } from 'webextension-rpc';
 
 function createPreciseUrl(url, selector) {
