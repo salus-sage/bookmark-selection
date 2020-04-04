@@ -4,14 +4,11 @@ Browser extension to bookmark any selected text in a web page.
 
 ## Status
 
-Proof of concept. Tested in recent Firefox and Chromium. Functional but buggy:
-It may fail to highlight the bookmarked text in some cases, but it is unlikely
-to cause harm.
+Proof of concept. Tested in recent Firefox and Chromium. Functional, but might fail to highlight the
+bookmarked text in some edge cases.
 
 This project uses a [proposed syntax](https://www.w3.org/TR/selectors-states/#frags)
-for encoding an arbitrary selection in the fragment identifier of a URL. It also
-doubles as a simple test scenario for [Apache Annotator](https://annotator.apache.org/)
-modules.
+for encoding an arbitrary selection in the fragment identifier of a URL, as implemented in [selector-state-frags](https://github.com/Treora/selector-state-frags/).
 
 ## Usage
 

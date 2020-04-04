@@ -1,6 +1,6 @@
 {
   "name": "bookmark-selection",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Browser extension to bookmark any selected text",
   "url": "https://github.com/salus-sage/bookmark-selection",
   "contributors": [
